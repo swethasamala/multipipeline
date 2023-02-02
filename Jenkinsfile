@@ -1,9 +1,9 @@
 properties([
+                gitLabConnection('gitlab')
                 buildDiscarder(
                         logRotator(
                                 numToKeepStr: "10")
                 )
-                gitLabConnection('gitlab')
         ])
 node {  
     stage('Build') { 
