@@ -1,10 +1,13 @@
 properties([
-  gitLabConnection('gitlab')
-  buildDiscarder(
-    logRotator(
-      numToKeepStr: "10")
-                )
-        ])
+        buildDiscarder(
+                logRotator(
+                        artifactDaysToKeepStr: "10",
+                        artifactNumToKeepStr: "50",
+                        daysToKeepStr: "10",
+                        numToKeepStr: "50")
+        )
+])
+properties([gitLabConnection('gitlab')])
 node {  
     stage('Build') { 
         sh """
