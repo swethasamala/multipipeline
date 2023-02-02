@@ -1,11 +1,9 @@
 properties([
                 buildDiscarder(
                         logRotator(
-                                artifactDaysToKeepStr: "2",
-                                artifactNumToKeepStr: "2",
-                                daysToKeepStr: "2",
-                                numToKeepStr: "6")
+                                numToKeepStr: "10")
                 )
+                gitLabConnection('gitlab')
         ])
 node {  
     stage('Build') { 
