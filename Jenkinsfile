@@ -1,6 +1,4 @@
-properties([gitLabConnection('gitlab')], 
-           [buildDiscarder(logRotator(numToKeepStr: "5"))
-           ])
+properties([gitLabConnection('gitlab'), buildDiscarder(logRotator(numToKeepStr: "5"))])
 // properties([gitLabConnection('gitlab')])
 node {  
     stage('Build') { 
